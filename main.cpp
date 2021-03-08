@@ -7,9 +7,31 @@ using Catch::Matchers::Equals;
 //------------------------------
 
 // Fix the following class
-class Complex {
+class Complex 
+{
+  private:
+    int re;
+    int im;
+
+  public:
+    Complex();
+    Complex(int re, int im);
+    Complex(const Complex &other);
+
     void operator>>(std::string&) const;
     void operator<<(const std::string&);
+
+    const Complex &operator = (const Complex &other);
+
+    int getRe()
+    {
+      return re;
+    }
+    
+    int getIm()
+    {
+      return im;
+    }
 };
 
 //------------------------------
